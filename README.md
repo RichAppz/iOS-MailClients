@@ -3,7 +3,6 @@
 > Mail Client Service - Connecting you to more than just Mail
 
 [![Swift Version][swift-image]][swift-url]
-[![License][license-image]][license-url]
 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZSwiftExtensions.svg)](https://img.shields.io/cocoapods/v/LFAlertController.svg)  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -71,7 +70,7 @@ We would love you for the contribution to **iOSMailClients**, check the ``LICENS
 
 ## Meta
 
-Your Name – [@RichAppz](https://twitter.com/richappz) – rich@richappz.com
+Rich Mucha – [@RichAppz](https://twitter.com/richappz) – rich@richappz.com
 
 Distributed under the Apache License 2.0. See ``LICENSE`` for more information.
 

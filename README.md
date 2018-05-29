@@ -32,7 +32,7 @@ use_frameworks!
 pod 'iOSMailClients'
 ```
 
-To get the full benefits import `YourLibrary` wherever you import UIKit
+To get the full benefits import `iOSMailClients` wherever you import UIKit
 
 ``` swift
 import UIKit

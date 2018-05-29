@@ -44,6 +44,10 @@ import iOSMailClients
 ```swift
 import iOSMailClients
 
+/// To allow the service to just open the client
+MailService.request(fromVC: self)
+
+/// To allow the service to compose an email - (mailto is a requirement)
 MailService.request(fromVC: self, subject: "Test Subject", body: "Test Body", mailto: "rich@richappz.com")
 ```
 

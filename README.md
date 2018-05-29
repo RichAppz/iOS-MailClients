@@ -54,7 +54,7 @@ You will need to add this snippet to your project plist to enable the URL Scheme
 ```
 <key>LSApplicationQueriesSchemes</key>
 <array>
-    <string>googlemail</string>
+    <string>googlegmail</string>
     <string>cloudmagic</string>
     <string>inbox-gmail</string>
     <string>ms-outlook</string>

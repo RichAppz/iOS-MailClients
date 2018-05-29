@@ -64,7 +64,13 @@ public class MailService: NSObject {
         
         let action = UIAlertAction(title: andTitleActionTitle, style: .default) { _ in
             if withURL == EmailClient.mail.rawValue {
-                guard let mailto = manager.mailto else { return }
+                guard let mailto = manager.mailto else {
+                    if let url = URL(string: "message://") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                    return
+                }
+                
                 let mail = MFMailComposeViewController()
                 mail.mailComposeDelegate = manager
                 mail.setToRecipients([mailto])

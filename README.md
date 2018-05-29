@@ -3,8 +3,6 @@
 > Mail Client Service - Connecting you to more than just Mail
 
 [![Swift Version][swift-image]][swift-url]
-
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZSwiftExtensions.svg)](https://img.shields.io/cocoapods/v/LFAlertController.svg)  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 This Pod allows you to connect to more than one mail client with ease.  Presenting a `UIAlertController` with multiple options based on what client is installed.

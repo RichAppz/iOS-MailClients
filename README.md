@@ -51,6 +51,8 @@ MailService.request(fromVC: self)
 MailService.request(fromVC: self, subject: "Test Subject", body: "Test Body", mailto: "rich@richappz.com")
 ```
 
+![alt text](https://github.com/RichAppz/iOS-MailClients/blob/master/example.jpg)
+
 #### Plist Requirements
 
 You will need to add this snippet to your project plist to enable the URL Schemes for the available clients

@@ -42,21 +42,37 @@ public class MailService: NSObject {
         manager.subject = subject
         manager.mailto = mailto
         
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        var actions = [UIAlertAction]()
         for client in EmailClient.list {
             if let action = openAction(
                 withURL: client.rawValue,
                 andTitleActionTitle: client.display,
                 scheme: composeString(client: client)) {
-                alert.addAction(action)
+                actions.append(action)
             }
         }
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        
-        manager.presentFrom?.present(alert, animated: true, completion: nil)
+        if actions.count > 0 {
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            for action in actions { alert.addAction(action) }
+            
+            alert.addAction(UIAlertAction(title: .cancel, style: .cancel, handler: { _ in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            manager.presentFrom?.present(alert, animated: true, completion: nil)
+        } else {
+            var message: String = .noEmailAccountsMessage
+            if let mailto = mailto, mailto.count > 0 {
+                UIPasteboard.general.string = mailto
+                message += String(format: .copiedEmailAddress, mailto)
+            }
+            
+            let alert = UIAlertController(title: .emailQuestion, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: .ok, style: .cancel, handler: { _ in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            manager.presentFrom?.present(alert, animated: true, completion: nil)
+        }
     }
     
     fileprivate static func openAction(withURL: String, andTitleActionTitle: String, scheme: String? = nil) -> UIAlertAction? {
@@ -93,12 +109,12 @@ public class MailService: NSObject {
         
         /// Append subject parameter if a subject line has been passed
         if let subject = manager.subject?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
-            string += ("&" + client.subject + subject)
+            string += (.and + client.subject + subject)
         }
         
         /// Append body parameter if a body has been passed
         if let body = manager.body?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
-            string += ("&" + client.body + body)
+            string += (.and + client.body + body)
         }
         return string
     }

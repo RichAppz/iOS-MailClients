@@ -13,6 +13,7 @@
 		8EC6619220BDA01100A0AB10 /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC6619120BDA01100A0AB10 /* EmailClient.swift */; };
 		8EC6619420BDA05500A0AB10 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC6619320BDA05500A0AB10 /* MailService.swift */; };
 		8EC6619620BDA0CE00A0AB10 /* iOSMailClients.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8EC6619520BDA0CE00A0AB10 /* iOSMailClients.podspec */; };
+		8EDF933120BEA3DF0025F9B1 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF933020BEA3DF0025F9B1 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		8EC6619120BDA01100A0AB10 /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 		8EC6619320BDA05500A0AB10 /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		8EC6619520BDA0CE00A0AB10 /* iOSMailClients.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iOSMailClients.podspec; sourceTree = "<group>"; };
+		8EDF933020BEA3DF0025F9B1 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				8EC6617B20BD9FC500A0AB10 /* Info.plist */,
 				8EC6619120BDA01100A0AB10 /* EmailClient.swift */,
 				8EC6619320BDA05500A0AB10 /* MailService.swift */,
+				8EDF933020BEA3DF0025F9B1 /* Extension+String.swift */,
 			);
 			path = "iOS-MailClients";
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			files = (
 				8EC6619420BDA05500A0AB10 /* MailService.swift in Sources */,
 				8EC6619220BDA01100A0AB10 /* EmailClient.swift in Sources */,
+				8EDF933120BEA3DF0025F9B1 /* Extension+String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

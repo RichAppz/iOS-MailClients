@@ -44,6 +44,10 @@ import iOSMailClients
 ```swift
 import iOSMailClients
 
+/// To allow the service to just open the client
+MailService.request(fromVC: self)
+
+/// To allow the service to compose an email - (mailto is a requirement)
 MailService.request(fromVC: self, subject: "Test Subject", body: "Test Body", mailto: "rich@richappz.com")
 ```
 
@@ -54,7 +58,7 @@ You will need to add this snippet to your project plist to enable the URL Scheme
 ```
 <key>LSApplicationQueriesSchemes</key>
 <array>
-    <string>googlemail</string>
+    <string>googlegmail</string>
     <string>cloudmagic</string>
     <string>inbox-gmail</string>
     <string>ms-outlook</string>

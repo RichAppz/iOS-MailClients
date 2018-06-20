@@ -53,7 +53,7 @@ public class MailService: NSObject {
         }
         
         if actions.count > 0 {
-            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: .chooseEmailApp, message: nil, preferredStyle: .actionSheet)
             for action in actions { alert.addAction(action) }
             
             alert.addAction(UIAlertAction(title: .cancel, style: .cancel, handler: { _ in

@@ -16,5 +16,6 @@ extension String {
     static var noEmailAccountsMessage: String { return "No email apps were found on your device." }
     static var copiedEmailAddress: String { return ", %@ has been copied to your clipboard." }
     static var and: String { return "&" }
+    static var chooseEmailApp: String { return "Choose the email app to open" }
     
 }

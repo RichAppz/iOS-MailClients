@@ -2,7 +2,7 @@ ENV['FORK_XCODE_WRITING'] = "true"
 
 Pod::Spec.new do |s|
   s.name = 'iOSMailClients'
-  s.version = '0.0.4'
+  s.version = '0.0.5'
   s.summary = 'Connecting your app to more than just Mail'
   s.source = { :git => 'https://github.com/RichAppz/iOS-MailClients.git', :tag => s.version }
   s.authors = 'RichMucha/RichAppz'

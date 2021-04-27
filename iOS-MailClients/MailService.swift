@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import MessageUI
 
 public class MailService: NSObject {
@@ -31,8 +30,14 @@ public class MailService: NSObject {
     // MARK: Helpers
     //================================================================================
     
+    /**
+     Use the method to request for an email to be sent this will check the users device to see what email clients are installed
+     and provide a `UIAlertController` to the user to open the client. If no email clients are found on the device
+     a alert will be presented and to explain this and will copy the email to the `UIPasteBoard`
+     */
     public static func request(
         fromVC viewController: UIViewController?,
+        sender: UIView? = nil,
         subject: String? = nil,
         body: String? = nil,
         mailto: String? = nil) {
@@ -53,12 +58,20 @@ public class MailService: NSObject {
         }
         
         if actions.count > 0 {
-            let alert = UIAlertController(title: .chooseEmailApp, message: nil, preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             for action in actions { alert.addAction(action) }
             
             alert.addAction(UIAlertAction(title: .cancel, style: .cancel, handler: { _ in
                 alert.dismiss(animated: true, completion: nil)
             }))
+            
+            if
+                let sender = sender,
+                let popoverController = alert.popoverPresentationController {
+                popoverController.sourceView = sender
+                popoverController.sourceRect = sender.bounds
+            }
+            
             manager.presentFrom?.present(alert, animated: true, completion: nil)
         } else {
             var message: String = .noEmailAccountsMessage
@@ -75,10 +88,17 @@ public class MailService: NSObject {
         }
     }
     
-    fileprivate static func openAction(withURL: String, andTitleActionTitle: String, scheme: String? = nil) -> UIAlertAction? {
+    fileprivate static func openAction(
+        withURL: String,
+        andTitleActionTitle: String,
+        scheme: String? = nil) -> UIAlertAction? {
+        
         guard let url = URL(string: withURL + (scheme ?? "")), UIApplication.shared.canOpenURL(url) else { return nil }
         
-        let action = UIAlertAction(title: andTitleActionTitle, style: .default) { _ in
+        let action = UIAlertAction(
+            title: andTitleActionTitle,
+            style: .default) { _ in
+            
             if withURL == EmailClient.mail.rawValue {
                 guard let mailto = manager.mailto else {
                     if let url = URL(string: "message://") {
@@ -101,7 +121,9 @@ public class MailService: NSObject {
         return action
     }
     
-    fileprivate static func composeString(client: EmailClient) -> String? {
+    fileprivate static func composeString(
+        client: EmailClient) -> String? {
+        
         guard let mailto = manager.mailto else { return nil }
         
         /// Create string with mailto parameter and email
@@ -121,9 +143,17 @@ public class MailService: NSObject {
     
 }
 
+//================================================================================
+// MARK: MFMailComposeViewControllerDelegate
+//================================================================================
+
 extension MailService: MFMailComposeViewControllerDelegate {
     
-    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+    public func mailComposeController(
+        _ controller: MFMailComposeViewController,
+        didFinishWith result: MFMailComposeResult,
+        error: Error?) {
+        
         if let error = error { debugPrint(error.localizedDescription) }
         controller.dismiss(animated: true, completion: nil)
     }

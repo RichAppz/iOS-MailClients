@@ -35,8 +35,9 @@
 		8EC6618720BD9FC500A0AB10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EC6619120BDA01100A0AB10 /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 		8EC6619320BDA05500A0AB10 /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
-		8EC6619520BDA0CE00A0AB10 /* iOSMailClients.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iOSMailClients.podspec; sourceTree = "<group>"; };
+		8EC6619520BDA0CE00A0AB10 /* iOSMailClients.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = iOSMailClients.podspec; sourceTree = "<group>"; };
 		8EDF933020BEA3DF0025F9B1 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		CBC1EEE8269DC646009B7E3E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		8EC6616D20BD9FC500A0AB10 = {
 			isa = PBXGroup;
 			children = (
+				CBC1EEE8269DC646009B7E3E /* README.md */,
 				8EC6619520BDA0CE00A0AB10 /* iOSMailClients.podspec */,
 				8EC6617920BD9FC500A0AB10 /* iOS-MailClients */,
 				8EC6618420BD9FC500A0AB10 /* iOS-MailClientsTests */,

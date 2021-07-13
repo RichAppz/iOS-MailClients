@@ -15,6 +15,7 @@ This Pod allows you to connect to more than one mail client with ease.  Presenti
 - [x] Outlook
 - [x] Spark
 - [x] Newton
+- [x] Airmail
 
 
 ## Requirements
@@ -65,6 +66,7 @@ You will need to add this snippet to your project plist to enable the URL Scheme
     <string>inbox-gmail</string>
     <string>ms-outlook</string>
     <string>readdle-spark</string>
+    <string>airmail</string>
 </array>
 ```
 

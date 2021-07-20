@@ -35,6 +35,8 @@ import Foundation
  `Gmail` - googlegmail:///co?subject=Hello&body=Hi
  https://stackoverflow.com/questions/32114455/open-gmail-app-from-my-app
  
+ `MS Outlook` - ms-outlook://compose?to=%@&subject=%@&body=%@
+ https://stackoverflow.com/questions/33190891/ios-url-scheme-microsoft-outlook-app
  
  */
 public enum EmailClient: String, CaseIterable {

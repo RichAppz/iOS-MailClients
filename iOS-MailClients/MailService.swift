@@ -185,7 +185,6 @@ public class MailService: NSObject {
             return alert
         } else {
             var message = noAccountMessage
-            var message = noAccountMessage
             if let mailto = mailto, mailto.count > 0 {
                 UIPasteboard.general.string = mailto
                 message += String(format: .copiedEmailAddress, mailto)

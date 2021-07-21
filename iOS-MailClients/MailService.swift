@@ -153,7 +153,7 @@ public class MailService: NSObject {
                 scheme: composeString(client: $0))
         }
         
-        if actions.count > 1 {
+        if actions.count > 0 {
             let alert = UIAlertController(
                 title: nil,
                 message: nil,
@@ -183,10 +183,8 @@ public class MailService: NSObject {
             }
             
             return alert
-        } else if let action = actions.first {
-            // THIS ACTION NEEDS TO BE DEALT WITH
-            return nil
         } else {
+            var message = noAccountMessage
             var message = noAccountMessage
             if let mailto = mailto, mailto.count > 0 {
                 UIPasteboard.general.string = mailto

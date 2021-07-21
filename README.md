@@ -1,6 +1,6 @@
 # iOS-MailClients
 
-> Mail Client Service - Connecting you to more than just Mail
+> Mail Client Service - Connecting you consumers to more than just Mail
 
 [![Swift Version][swift-image]][swift-url]
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)

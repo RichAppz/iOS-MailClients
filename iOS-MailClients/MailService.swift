@@ -146,11 +146,28 @@ public class MailService: NSObject {
         manager.mailto = mailto
         
         // Sort the clients that could be available on the users device
+        var availableClients = EmailClient.allCases.compactMap {
+            return openAction(
+                withURL: $0.rawValue,
+                andTitleActionTitle: $0.display,
+                scheme: composeString(client: $0)) != nil ? $0 : nil
+        }
+        
         let actions = EmailClient.allCases.compactMap {
             return openAction(
                 withURL: $0.rawValue,
                 andTitleActionTitle: $0.display,
                 scheme: composeString(client: $0))
+        }
+        
+        // If there is only one action available open
+        if let action = availableClients.first, availableClients.count == 1 {
+            completeAction(
+                withURL: action.rawValue,
+                scheme: composeString(client: action)
+            )
+            
+            return nil
         }
         
         if actions.count > 0 {
@@ -228,27 +245,48 @@ public class MailService: NSObject {
             title: andTitleActionTitle,
             style: .default) { _ in
             
-            if withURL == EmailClient.mail.rawValue {
-                guard let mailto = manager.mailto else {
-                    if let url = URL(string: "message://") {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                    return
-                }
-                
-                let mail = MFMailComposeViewController()
-                mail.mailComposeDelegate = manager
-                mail.setToRecipients([mailto])
-                if let subject = manager.subject { mail.setSubject(subject) }
-                if let body = manager.body { mail.setMessageBody(body, isHTML: true) }
-                
-                manager.presentFrom?.present(mail, animated: true, completion: nil)
-                manager.presentation?(mail)
-            } else {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+            self.completeAction(
+                withURL: withURL,
+                scheme: scheme
+            )
         }
         return action
+    }
+    
+    fileprivate static func completeAction(
+        withURL: String,
+        scheme: String? = nil) {
+        
+        if withURL == EmailClient.mail.rawValue {
+            guard let mailto = manager.mailto else {
+                if let url = URL(string: "message://") {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+                return
+            }
+            
+            let controller = MFMailComposeViewController()
+            controller.mailComposeDelegate = manager
+            controller.setToRecipients([mailto])
+            if let subject = manager.subject { controller.setSubject(subject) }
+            if let body = manager.body { controller.setMessageBody(body, isHTML: true) }
+            
+            if manager.presentation != nil {
+                manager.presentation?(controller)
+            } else {
+                manager.presentFrom?.present(
+                    controller,
+                    animated: true,
+                    completion: nil
+                )
+            }
+        } else {
+            guard
+                let url = URL(string: withURL + (scheme ?? "")),
+                UIApplication.shared.canOpenURL(url) else { return }
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     fileprivate static func composeString(

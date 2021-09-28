@@ -27,6 +27,7 @@
 import Foundation
 import MessageUI
 
+@available(iOS 10.0, *)
 public class MailService: NSObject {
     
     //================================================================================
@@ -146,7 +147,7 @@ public class MailService: NSObject {
         manager.mailto = mailto
         
         // Sort the clients that could be available on the users device
-        var availableClients = EmailClient.allCases.compactMap {
+        let availableClients = EmailClient.allCases.compactMap {
             return openAction(
                 withURL: $0.rawValue,
                 andTitleActionTitle: $0.display,
@@ -315,6 +316,7 @@ public class MailService: NSObject {
 // MARK: MFMailComposeViewControllerDelegate
 //================================================================================
 
+@available(iOS 10.0, *)
 extension MailService: MFMailComposeViewControllerDelegate {
     
     public func mailComposeController(

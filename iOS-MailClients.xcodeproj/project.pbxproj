@@ -21,7 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_26 /* iOS_MailClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* iOS_MailClients.swift */; };
+		CB844FD127030C2B00C815DC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB844FCE27030C2B00C815DC /* Extension+String.swift */; };
+		CB844FD227030C2B00C815DC /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB844FCF27030C2B00C815DC /* EmailClient.swift */; };
+		CB844FD327030C2B00C815DC /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB844FD027030C2B00C815DC /* MailService.swift */; };
 		OBJ_33 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_44 /* iOS_MailClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* iOS_MailClientsTests.swift */; };
 		OBJ_46 /* iOS_MailClients.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "iOS-MailClients::iOS-MailClients::Product" /* iOS_MailClients.framework */; };
@@ -45,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB844FCE27030C2B00C815DC /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		CB844FCF27030C2B00C815DC /* EmailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
+		CB844FD027030C2B00C815DC /* MailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_13 /* iOS_MailClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MailClientsTests.swift; sourceTree = "<group>"; };
 		OBJ_17 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -52,9 +57,8 @@
 		OBJ_19 /* iOSMailClients.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = iOSMailClients.podspec; sourceTree = "<group>"; };
 		OBJ_20 /* example.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example.jpg; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* iOS_MailClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MailClients.swift; sourceTree = "<group>"; };
-		"iOS-MailClients::iOS-MailClients::Product" /* iOS_MailClients.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iOS_MailClients.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"iOS-MailClients::iOS-MailClientsTests::Product" /* iOS_MailClientsTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = iOS_MailClientsTests.xctest; path = "iOS-MailClientsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		"iOS-MailClients::iOS-MailClients::Product" /* iOS_MailClients.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOS_MailClients.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"iOS-MailClients::iOS-MailClientsTests::Product" /* iOS-MailClientsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = "iOS-MailClientsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				"iOS-MailClients::iOS-MailClients::Product" /* iOS_MailClients.framework */,
-				"iOS-MailClients::iOS-MailClientsTests::Product" /* iOS_MailClientsTests.xctest */,
+				"iOS-MailClients::iOS-MailClientsTests::Product" /* iOS-MailClientsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -129,7 +133,9 @@
 		OBJ_8 /* iOS-MailClients */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* iOS_MailClients.swift */,
+				CB844FCF27030C2B00C815DC /* EmailClient.swift */,
+				CB844FCE27030C2B00C815DC /* Extension+String.swift */,
+				CB844FD027030C2B00C815DC /* MailService.swift */,
 			);
 			name = "iOS-MailClients";
 			path = "Sources/iOS-MailClients";
@@ -182,7 +188,7 @@
 			);
 			name = "iOS-MailClientsTests";
 			productName = iOS_MailClientsTests;
-			productReference = "iOS-MailClients::iOS-MailClientsTests::Product" /* iOS_MailClientsTests.xctest */;
+			productReference = "iOS-MailClients::iOS-MailClientsTests::Product" /* iOS-MailClientsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -193,6 +199,11 @@
 			attributes = {
 				LastSwiftMigration = 9999;
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"iOS-MailClients::iOS-MailClients" = {
+						LastSwiftMigration = 1300;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "iOS-MailClients" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -219,7 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_26 /* iOS_MailClients.swift in Sources */,
+				CB844FD327030C2B00C815DC /* MailService.swift in Sources */,
+				CB844FD127030C2B00C815DC /* Extension+String.swift in Sources */,
+				CB844FD227030C2B00C815DC /* EmailClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +271,9 @@
 		OBJ_23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -278,6 +293,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = "iOS-MailClients";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -288,7 +304,9 @@
 		OBJ_24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -401,6 +419,7 @@
 		OBJ_41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
@@ -428,6 +447,7 @@
 		OBJ_42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;

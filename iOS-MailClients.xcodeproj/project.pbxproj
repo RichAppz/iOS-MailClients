@@ -21,9 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		CB844FD127030C2B00C815DC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB844FCE27030C2B00C815DC /* Extension+String.swift */; };
-		CB844FD227030C2B00C815DC /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB844FCF27030C2B00C815DC /* EmailClient.swift */; };
-		CB844FD327030C2B00C815DC /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB844FD027030C2B00C815DC /* MailService.swift */; };
+		8EFD37A52824087000D59EC6 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD37A22824087000D59EC6 /* Extension+String.swift */; };
+		8EFD37A62824087000D59EC6 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD37A32824087000D59EC6 /* MailService.swift */; };
+		8EFD37A72824087000D59EC6 /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD37A42824087000D59EC6 /* EmailClient.swift */; };
 		OBJ_33 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_44 /* iOS_MailClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* iOS_MailClientsTests.swift */; };
 		OBJ_46 /* iOS_MailClients.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "iOS-MailClients::iOS-MailClients::Product" /* iOS_MailClients.framework */; };
@@ -47,9 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB844FCE27030C2B00C815DC /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
-		CB844FCF27030C2B00C815DC /* EmailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
-		CB844FD027030C2B00C815DC /* MailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
+		8EFD37A22824087000D59EC6 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		8EFD37A32824087000D59EC6 /* MailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
+		8EFD37A42824087000D59EC6 /* EmailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_13 /* iOS_MailClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MailClientsTests.swift; sourceTree = "<group>"; };
 		OBJ_17 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -80,6 +80,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8EFD37A12824087000D59EC6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8EFD37A22824087000D59EC6 /* Extension+String.swift */,
+				8EFD37A32824087000D59EC6 /* MailService.swift */,
+				8EFD37A42824087000D59EC6 /* EmailClient.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,39 +117,19 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_19 /* iOSMailClients.podspec */,
 				OBJ_6 /* Package.swift */,
-				OBJ_7 /* Sources */,
+				8EFD37A12824087000D59EC6 /* Sources */,
 				OBJ_10 /* Tests */,
 				OBJ_14 /* Products */,
 				OBJ_17 /* LICENSE */,
 				OBJ_18 /* README.md */,
 				OBJ_20 /* example.jpg */,
 			);
-			name = "";
 			sourceTree = "<group>";
-		};
-		OBJ_7 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_8 /* iOS-MailClients */,
-			);
-			name = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_8 /* iOS-MailClients */ = {
-			isa = PBXGroup;
-			children = (
-				CB844FCF27030C2B00C815DC /* EmailClient.swift */,
-				CB844FCE27030C2B00C815DC /* Extension+String.swift */,
-				CB844FD027030C2B00C815DC /* MailService.swift */,
-			);
-			name = "iOS-MailClients";
-			path = "Sources/iOS-MailClients";
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -212,7 +202,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,9 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				CB844FD327030C2B00C815DC /* MailService.swift in Sources */,
-				CB844FD127030C2B00C815DC /* Extension+String.swift in Sources */,
-				CB844FD227030C2B00C815DC /* EmailClient.swift in Sources */,
+				8EFD37A72824087000D59EC6 /* EmailClient.swift in Sources */,
+				8EFD37A62824087000D59EC6 /* MailService.swift in Sources */,
+				8EFD37A52824087000D59EC6 /* Extension+String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

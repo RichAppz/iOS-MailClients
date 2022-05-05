@@ -42,7 +42,7 @@ import Foundation
 public enum EmailClient: String, CaseIterable {
     
     case mail = "mailto:"
-    case gmail = "googlegmail:///"
+    case gmail = "googlegmail://"
     case inbox = "inbox-gmail://"
     case outlook = "ms-outlook://"
     case spark = "readdle-spark://"
